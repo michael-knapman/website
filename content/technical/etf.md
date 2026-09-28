@@ -65,3 +65,13 @@ In contrast, ETFs are much newer, only introduced in 1993 in USA and 1990 in Can
 As legacy products, their fees are usually higher, around 1.00%-2.00% per year compared to 0.1-0.2% per year for ETFs.  
 Mutual fund transactions take about 1 day for settling, and settling only occurs at night, with no instant daytime liquidty like ETFs. A delay of only 1 day is generally not a problem for liquidity.  
 As such, the only advantage of mutual funds is that they prevent you from day trading or gambling.
+
+# Citations
+A Comprehensive Guide to Exchange-Traded Funds (ETFs)  
+https://rpc.cfainstitute.org/research/foundation/2015/a-comprehensive-guide-to-exchange-traded-funds-etfs
+
+Module 1: ETF Features and Evolving Landscape 
+https://rpc.cfainstitute.org/research/foundation/2025/guide-to-etfs
+
+Module 2: Evaluating ETFs  
+https://rpc.cfainstitute.org/research/foundation/2026/evaluating-etfs-module-2
