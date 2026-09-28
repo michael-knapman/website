@@ -7,7 +7,7 @@
 /* Must start with ".site-box". Change how your website will appear on main nekoweb site: https://nekoweb.org/assets/siteboxes.png */
 .site-box {
     text-align: center;
-    background-image: url(https://michael.nekoweb.org/assets/TtownV4_raw.webp); /* only full your-username.nekoweb.org image urls allowed */
+    background-image: url(https://michael.nekoweb.org/assets/TtownV4_sitebox.webp); /* only full your-username.nekoweb.org image urls allowed */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
