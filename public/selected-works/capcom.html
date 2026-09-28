@@ -29,6 +29,28 @@ body {
     cursor: url(/assets/cursor_tamagotchi_connection_3_ice_cream.png) 0 0, auto;
 }
 
+/* The `*` rule above sets an explicit cursor on every element, which
+   overrides the browser's pointing hand over links: links rely on the
+   `cursor: auto` heuristic in the user-agent stylesheet, and author
+   declarations beat user-agent ones regardless of specificity. So the
+   interactive cursors have to be re-declared explicitly, after the `*`
+   rule. `auto` on form fields hands the decision back to the browser
+   (text caret in a field, arrow over a select). */
+a[href],
+button,
+summary,
+label,
+[role="button"],
+[onclick] {
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    cursor: auto;
+}
+
 /*
     Central text box, injected around every page's body by build_site.py
     (see the wrap_content function there).
