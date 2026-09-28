@@ -19,7 +19,6 @@ Most pages are just text, from the "content" folder.
 Some pages do not originate from the "content" folder, they are shrines or
 customized pages, and have their own style.css!
 
-
 ## Build step
 
 Run this before git add/commit/push to convert `content/*.md` into pages and
@@ -47,8 +46,7 @@ Include art assets from Tamagotchi Connection V3/4.5/5 and Tamagotchi corner sho
 Make the website more easily accessable from nekoweb.org AKA make a nicer banner.
 
 
-
-## Legal
+## Legal    
 
 Source code is licensed under the MIT License. Written content is licensed under CC BY-NC-SA 4.0.
 Copyright © 2026 Michael Knapman. All Rights Reserved.
