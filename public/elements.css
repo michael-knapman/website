@@ -1,43 +1,31 @@
-/* 
-    Don't use this file to edit your site style! Create a different CSS file for that.
-    This file defines how custom elements (like sitebox) will look like.
-    Setting CSS that breaks main nekoweb site on purpose is prohibited and may result in ban and site deletion! 
-*/
-
-/* Must start with ".site-box". Change how your website will appear on main nekoweb site: https://nekoweb.org/assets/siteboxes.png */
+/* elements.css: your site box + RSS post box only. Max 1.5 kB free / 7.5 kB paid.
+   Never break nekoweb on purpose. Box images need a full nekoweb.org URL. */
 .site-box {
-    text-align: center;
-    background-image: url(https://michael.nekoweb.org/assets/TtownV4_50-640.webp); /* Only your-username.nekoweb.org URLs allowed, use FULL url to your file like https://your-username.nekoweb.org/your-username.nekoweb.org/bg.png */
-    background-repeat: no-repeat;
-    color: #b08271;
-    font-size: 12px;
+    background: url(https://michael.nekoweb.org/assets/TtownV4_raw.webp) center / cover no-repeat;
+    color: #000;
 }
-.site-box > a > p {
-    color: var(--darkbrown);
-    font-weight: bold;
+.site-box .sitefeature { display: none; } /* art is the background */
+.site-box > a {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    height: 100%; color: #000; text-decoration: none;
+    text-shadow: 0 0 6px #fff; /* legibility */
 }
-.site-box > a > span {
-    color: var(--darkbrown);
+.site-box > a > span { /* "Michael's Website" */
+    order: -1; height: auto; /* .site-title clips it to 17px */
+    color: #000; font-size: 18px; font-weight: bold;
 }
-
-/* Style for your 'Follow on Nekoweb' button (<iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>) */
-.follow {
-
+.site-box > a > p { /* "michael.nekoweb.org" */
+    margin: 0; color: #000; font-size: 12px; font-weight: normal;
 }
-
-/* Style for your post box (must start with ".post-box") */
+.site-box .follow { /* the [+] button, under the domain */
+    display: block; width: fit-content; margin: 6px auto 0;
+    padding: 2px 10px; border: 1px solid #000; border-radius: 999px;
+    background: #fffc; color: #000; font-size: 0; line-height: 1.2; /* hide [+], ::after adds the word */
+}
+.site-box .follow::after { content: "Follow"; font-size: 12px; }
 .post-box {
-    background-color: #fff2cc;
-    border: 4px solid #ecbfa6;
-    padding: 15px;
-    border-radius: 5px;
-    color: #634c53;
-    font-weight: normal;
+    background-color: #fff2cc; border: 4px solid #ecbfa6; padding: 15px;
+    border-radius: 5px; color: #634c53; font-weight: normal;
 }
-
-.post-box .post-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
+.post-box .post-title { font-size: 18px; font-weight: bold; margin: 10px 0 0; }
