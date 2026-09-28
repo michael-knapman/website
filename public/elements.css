@@ -13,15 +13,41 @@
     background-position: center;
     color: #b08271;
     font-size: 12px;
+
+    /* Nekoweb pins the sitebox size with an inline width/height (275x190px),
+       so a flex column with justify-content: flex-end parks the caption on
+       the bottom edge of the art. border-box keeps the padding inside that
+       height instead of making the box taller than its frame. */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 6px;
 }
 .site-box .sitefeature { display: none; } /* no screenshot; the domain line sits on the art */
+
+/* The caption (domain + site title) shrinks to its text and sits on a small
+   white plate so it stays readable over the art. */
+.site-box > a {
+    display: block;
+    max-width: 100%;
+    padding: 2px 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+    text-decoration: none;
+}
 .site-box > a > p {
+    margin: 0;
     color: var(--darkbrown);
     font-weight: bold;
+    line-height: 1.3;
 }
 .site-box > a > span {
     color: var(--darkbrown);
+    line-height: 17px; /* matches the 17px box nekoweb clips .site-title into */
 }
+.site-box > a > br { display: none; } /* the flex column already stacks the lines */
 
 /* Style for your 'Follow on Nekoweb' button (<iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>) */
 .follow {
