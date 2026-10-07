@@ -649,8 +649,7 @@ def auto_description(html, rel_path):
     for para in re.findall(r"<p[^>]*>(.*?)</p>", body, re.DOTALL):
         text = re.sub(r"<[^>]+>", " ", para)
         text = htmlmod.unescape(text)
-        # The markdown converter stores some line breaks as &lt;br&gt;
-        # entities; sweep up any tag-like leftovers revealed by unescaping.
+        # Sweep up any tag-like leftovers revealed by unescaping.
         text = re.sub(r"<[^>]*>", " ", text)
         text = re.sub(r"\s+", " ", text).strip()
         if len(text) >= 15:
@@ -793,14 +792,18 @@ def render_paragraph(lines):
 
     A hard break on the very last line of a block is dropped, matching
     Markdown: it would hang into an invisible end of paragraph.
+
+    Each line is escaped/autolinked *before* the <br> is appended, so the
+    escaping never turns our own break tag into literal "&lt;br&gt;" text.
     """
     out = []
     for i, line in enumerate(lines):
         hard_break = re.search(r"[ \t]{2,}$", line) is not None
+        text = inline_html(line.rstrip())
         if hard_break and i < len(lines) - 1:
-            out.append(line.rstrip() + "<br>")
+            out.append(text + "<br>")
         else:
-            out.append(line.rstrip())
+            out.append(text)
     return " ".join(out)
 
 
@@ -834,8 +837,9 @@ def render_markdown_block(lines):
         return (f"<table>\n<thead><tr>{header}</tr></thead>\n"
                 f"<tbody>\n{tbody}\n</tbody>\n</table>")
 
-    # Plain paragraph (with hard breaks).
-    return f"<p>{inline_html(render_paragraph(lines))}</p>"
+    # Plain paragraph (with hard breaks). render_paragraph already escapes
+    # each line, so it must not pass through inline_html a second time.
+    return f"<p>{render_paragraph(lines)}</p>"
 
 
 def convert_markdown_to_html(md_text):
