@@ -102,6 +102,9 @@ STICKER = (
 LINKEDIN_URL = "https://www.linkedin.com/in/michael-knapman/"
 LINKEDIN_IMG = "assets/linkedin.webp"
 LINKEDIN_TITLE = "Michael's Linkedin"
+GITHUB_URL = "https://github.com/michael-knapman/website"
+GITHUB_IMG = "assets/github.webp"
+GITHUB_TITLE = "Michael's Website's Free and Open Source Code"
 # Absolute URLs on purpose: visitors copy this snippet onto their own
 # sites, so it must work offsite as well as here.
 MYBUTTON = (
@@ -541,6 +544,12 @@ def build_sidebar(sitemap, current_rel):
         f'width="64" height="54" alt="LinkedIn">'
         "</a>"
     )
+    github = (
+        f'<a href="{GITHUB_URL}" title="{GITHUB_TITLE}">'
+        f'<img src="{rel_href(cur_dir, GITHUB_IMG)}" '
+        f'width="59" height="58" alt="GitHub">'
+        "</a>"
+    )
     return (
         f"\n<!-- {SIDEBAR_MARKER_START} -->\n"
         f'<aside class="sidebar">\n'
@@ -553,6 +562,7 @@ def build_sidebar(sitemap, current_rel):
         f"    <div class=\"sidebar-foot\">\n"
         f"        {STICKER}\n"
         f"        {linkedin}\n"
+        f"        {github}\n"
         f"        {MYBUTTON}\n"
         f"        <p>{escape_html(COPYRIGHT)}</p>\n"
         f"    </div>\n"
