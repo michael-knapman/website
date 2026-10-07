@@ -1,4 +1,4 @@
-# Cool Wesbites
+# Cool Websites
 
 Cool websites that inspired this website:  
 https://deltarune.com/code/  

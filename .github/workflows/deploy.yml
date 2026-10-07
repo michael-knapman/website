@@ -33,3 +33,19 @@ jobs:
           nekoweb-domain: 'michael.nekoweb.org'
           nekoweb-username: 'michael'
           directory: 'public'
+
+      # deploy2nekoweb deletes the whole remote site before re-uploading, and
+      # swallows upload errors while still exiting 0 (green run, empty site).
+      # Fail loudly if the homepage doesn't come back after a deploy.
+      - name: Smoke test
+        run: |
+          for i in 1 2 3 4 5 6; do
+            if curl -fsS -o /dev/null https://michael.nekoweb.org/; then
+              echo "Site is up."
+              exit 0
+            fi
+            echo "Attempt $i failed, waiting 20s for Nekoweb to serve fresh files..."
+            sleep 20
+          done
+          echo "Homepage did not come back after deploy." >&2
+          exit 1
