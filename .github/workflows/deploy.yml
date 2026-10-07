@@ -3,13 +3,45 @@ name: Deploy to Nekoweb
 on:
   push:
     branches: [main]
+  pull_request:
 
 concurrency:
   group: nekoweb-deploy
   cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: test
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Build site
+        run: python3 static_site_generator.py
+
+      - name: Check build output is committed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Build output differs from committed files." >&2
+            echo "Run python3 static_site_generator.py and commit the result." >&2
+            git status --porcelain
+            exit 1
+          fi
+
   deploy:
+    needs: test
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: deploy2nekoweb
     permissions:

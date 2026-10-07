@@ -262,16 +262,16 @@ class GroupNode:
 
 
 def escape_html(text):
-    """Escape a page title so it is safe inside HTML markup."""
-    return (
-        text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    )
+    """Escape text so it is safe inside HTML markup and attributes."""
+    return htmlmod.escape(text, quote=True)
 
 
 def extract_title(html, filename):
     match = re.search(r"<title[^>]*>([^<]*)</title>", html, re.IGNORECASE)
     if match and match.group(1).strip():
-        return match.group(1).strip()
+        # Titles in <title> tags carry HTML entities; unescape so callers
+        # can apply exactly one round of escaping for their own context.
+        return htmlmod.unescape(match.group(1).strip())
     return filename.removesuffix(".html")
 
 
@@ -385,8 +385,9 @@ def normalize_marker_spacing(html):
     static_site_generator versions. This is idempotent: on already-clean files it is a
     no-op.
     """
-    # CSS block: exactly one newline before the opening marker.
-    html = re.sub(r"\n*(<!--\s*BEGINSIDEBAR:CSS\s*-->)", r"\n\1", html)
+    # CSS block: exactly one newline before the opening marker. \s* (not
+    # just \n*) so leftover indentation can never pile up extra newlines.
+    html = re.sub(r"\s*(<!--\s*BEGINSIDEBAR:CSS\s*-->)", r"\n\1", html)
     # Sidebar block: exactly one blank line after the closing marker.
     html = re.sub(
         r"(<!--\s*ENDSIDEBAR\s*-->)(\n*)", r"\1\n\n", html
@@ -496,23 +497,27 @@ def render_nav(nodes, cur_dir, current_rel, depth=0):
             href = rel_href(cur_dir, node.rel_path)
             is_current = node.rel_path == current_rel
             extra = ' class="current" aria-current="page"' if is_current else ""
-            out.append(
-                f"{pad}<li><a href=\"{href}\"{extra}>"
-                f"{escape_html(node.label)}</a></li>"
-            )
+            link = (f"{pad}<li><a href=\"{href}\"{extra}>"
+                    f"{escape_html(node.label)}</a>")
             if node.children and is_node_active(node, current_rel):
+                # The child <ul> nests *inside* the <li> (a bare <ul> under
+                # <ul> is invalid HTML and hurts screen readers).
+                out.append(link)
                 out.append(f"{pad}<ul>")
                 out.extend(render_nav(node.children, cur_dir, current_rel, depth + 1))
-                out.append(f"{pad}</ul>")
+                out.append(f"{pad}</ul></li>")
+            else:
+                out.append(link + "</li>")
         else:  # GroupNode
-            out.append(
-                f"{pad}<li class=\"group\"><span>"
-                f"{escape_html(node.label)}</span></li>"
-            )
+            head = (f"{pad}<li class=\"group\"><span>"
+                    f"{escape_html(node.label)}</span>")
             if node.children and is_node_active(node, current_rel):
+                out.append(head)
                 out.append(f"{pad}<ul>")
                 out.extend(render_nav(node.children, cur_dir, current_rel, depth + 1))
-                out.append(f"{pad}</ul>")
+                out.append(f"{pad}</ul></li>")
+            else:
+                out.append(head + "</li>")
     return out
 
 
@@ -631,7 +636,7 @@ META_DESC_RE = re.compile(
 
 def escape_attr(text):
     """Escape text so it is safe inside a double-quoted HTML attribute."""
-    return escape_html(text).replace('"', "&quot;")
+    return escape_html(text)
 
 
 def auto_description(html, rel_path):
@@ -684,7 +689,10 @@ def inject_meta_description(html, current_rel):
     line crumbs left behind in the head are collapsed, then a single fresh
     tag is inserted after <title>.
     """
-    html = META_DESC_RE.sub("", html)
+    # The old tag owns its whole line (newline + indentation), so removing
+    # just the tag cannot leave whitespace crumbs that later passes would
+    # treat as content and pad with more newlines.
+    html = re.sub(r"\n?[ \t]*" + META_DESC_RE.pattern, "", html)
     html = collapse_head_blanks(html)
     description = PAGE_DESCRIPTIONS.get(
         current_rel, auto_description(html, current_rel)

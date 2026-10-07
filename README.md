@@ -33,7 +33,12 @@ are never overwritten. Add `<!-- nocontentbox -->` anywhere.
 
 ## Test step
 
+Run the unit tests (standard library only, no dependencies):
+
+    python3 -m unittest discover -s tests -v
+
 Test the website in VScode terminal by running:
+
     python3 -m http.server 8000 --directory public
 
 ## Push step
