@@ -21,9 +21,11 @@ customized pages, and have their own style.css!
 
 ## Build step
 
-Run this before git add/commit/push to convert `content/*.md` into pages and
-inject the fixed left-hand sidebar into every page in `public/`:
+The deploy workflow (`.github/workflows/deploy.yml`) runs `python3 build_site.py`
+automatically on every push to `main`, then deploys `public/`. You do not need
+to build before `git push`; running it locally is only for previewing:
     python3 build_site.py
+    python3 -m http.server 8000 --directory public
 
 Hand-crafted pages: pages you write directly in `public/` (like
 `credits.html`, or a pretty art shrine) get the sidebar and stylesheet but

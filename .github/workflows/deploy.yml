@@ -1,17 +1,31 @@
-on: [push]
+name: Deploy to Nekoweb
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: nekoweb-deploy
+  cancel-in-progress: false
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     name: deploy2nekoweb
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      # NOTE: the sidebar build step (python3 build_site.py) must be run
-      # locally before pushing; this workflow deploys public/ as-is.
-      # your build step here
-        
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build site
+        run: python3 build_site.py
+
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
         with:
