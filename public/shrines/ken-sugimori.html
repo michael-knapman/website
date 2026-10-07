@@ -11,7 +11,7 @@
 <!-- Shrine stylesheet: edit public/shrines/ken-sugimori/style.css to
          re-skin this whole page (the palette lives in its :root block).
          The site's sidebar and stylesheet are still injected by
-         build_site.py when you run it. -->
+         static_site_generator.py when you run it. -->
     <link rel="stylesheet" href="ken-sugimori/style.css">
 <!-- BEGINSIDEBAR:CSS -->
 <link rel="icon" href="/favicon.ico">
@@ -59,7 +59,7 @@ select {
 }
 
 /*
-    Central text box, injected around every page's body by build_site.py
+    Central text box, injected around every page's body by static_site_generator.py
     (see the wrap_content function there).
     The box stretches with the viewport:
       - width is a fraction of the viewport (minus a small side strip)
@@ -82,7 +82,7 @@ main.content-box {
 }
 
 /*
-    Styling for content generated from content/*.md by build_site.py:
+    Styling for content generated from content/*.md by static_site_generator.py:
     the <h1> heading, prose paragraphs, lists and markdown tables.
 */
 main.content-box h1 {
@@ -122,7 +122,7 @@ main.content-box thead th {
     font-weight: bold;
 }</style>
 <style id="sidebar-css">
-/* Injected by build_site.py - do not edit by hand, re-run the build instead. */
+/* Injected by static_site_generator.py - do not edit by hand, re-run the build instead. */
 :root {
     --sidebar-width: 260px;
 }

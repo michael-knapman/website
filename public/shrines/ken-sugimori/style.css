@@ -1,7 +1,7 @@
 /*
     Shrine stylesheet: Ken Sugimori — early Pokémon art.
 
-    A self-contained subtheme for this one page. build_site.py still injects
+    A self-contained subtheme for this one page. static_site_generator.py still injects
     the site sidebar and stylesheet; this file only describes the shrine's
     own look. Re-skin the whole shrine by editing the palette in :root.
 

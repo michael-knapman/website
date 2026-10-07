@@ -24,7 +24,7 @@ jobs:
           python-version: "3.12"
 
       - name: Build site
-        run: python3 build_site.py
+        run: python3 static_site_generator.py
 
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main

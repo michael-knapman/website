@@ -21,10 +21,10 @@ customized pages, and have their own style.css!
 
 ## Build step
 
-The deploy workflow (`.github/workflows/deploy.yml`) runs `python3 build_site.py`
+The deploy workflow (`.github/workflows/deploy.yml`) runs `python3 static_site_generator.py`
 automatically on every push to `main`, then deploys `public/`. You do not need
 to build before `git push`; running it locally is only for previewing:
-    python3 build_site.py
+    python3 static_site_generator.py
     python3 -m http.server 8000 --directory public
 
 Hand-crafted pages: pages you write directly in `public/` (like
