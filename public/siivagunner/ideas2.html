@@ -25,17 +25,21 @@ body {
     background-size: auto;
 }
 
+/* Custom cursor DISABLED (it renders poorly on large 1440p+ screens).
+   To re-enable, remove this outer comment wrapper. Note: the explanatory
+   comment inside had its own delimiters stripped because CSS comments
+   cannot nest.
 * {
     cursor: url(/assets/cursor_tamagotchi_connection_3_ice_cream.png) 0 0, auto;
 }
 
-/* The `*` rule above sets an explicit cursor on every element, which
-   overrides the browser's pointing hand over links: links rely on the
-   `cursor: auto` heuristic in the user-agent stylesheet, and author
-   declarations beat user-agent ones regardless of specificity. So the
-   interactive cursors have to be re-declared explicitly, after the `*`
-   rule. `auto` on form fields hands the decision back to the browser
-   (text caret in a field, arrow over a select). */
+The `*` rule above sets an explicit cursor on every element, which
+overrides the browser's pointing hand over links: links rely on the
+`cursor: auto` heuristic in the user-agent stylesheet, and author
+declarations beat user-agent ones regardless of specificity. So the
+interactive cursors have to be re-declared explicitly, after the `*`
+rule. `auto` on form fields hands the decision back to the browser
+(text caret in a field, arrow over a select).
 a[href],
 button,
 summary,
@@ -50,6 +54,7 @@ textarea,
 select {
     cursor: auto;
 }
+*/
 
 /*
     Central text box, injected around every page's body by static_site_generator.py
@@ -272,6 +277,7 @@ aside.sidebar {
     </nav>
     <div class="sidebar-foot">
         <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button1.gif" width="88" height="31" alt="Nekoweb"></a>
+        <a href="https://www.linkedin.com/in/michael-knapman/"><img src="../assets/linkedin.webp" width="64" height="54" alt="LinkedIn"></a>
         <p>Copyright © 2026 Michael Knapman. All Rights Reserved.</p>
     </div>
 </aside>

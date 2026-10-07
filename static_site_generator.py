@@ -99,6 +99,8 @@ STICKER = (
     'width="88" height="31" alt="Nekoweb">'
     "</a>"
 )
+LINKEDIN_URL = "https://www.linkedin.com/in/michael-knapman/"
+LINKEDIN_IMG = "assets/linkedin.webp"
 COPYRIGHT = "Copyright © 2026 Michael Knapman. All Rights Reserved."
 
 # Compact music player shown at the top of the sidebar. It uses the browser's
@@ -518,6 +520,12 @@ def build_sidebar(sitemap, current_rel):
     cur_dir = parent_dir(current_rel)
     nav_lines = render_nav(sitemap.root, cur_dir, current_rel)
     nav = "\n".join(nav_lines)
+    linkedin = (
+        f'<a href="{LINKEDIN_URL}">'
+        f'<img src="{rel_href(cur_dir, LINKEDIN_IMG)}" '
+        f'width="64" height="54" alt="LinkedIn">'
+        "</a>"
+    )
     return (
         f"\n<!-- {SIDEBAR_MARKER_START} -->\n"
         f'<aside class="sidebar">\n'
@@ -529,6 +537,7 @@ def build_sidebar(sitemap, current_rel):
         f"    </nav>\n"
         f"    <div class=\"sidebar-foot\">\n"
         f"        {STICKER}\n"
+        f"        {linkedin}\n"
         f"        <p>{escape_html(COPYRIGHT)}</p>\n"
         f"    </div>\n"
         f"</aside>\n"
