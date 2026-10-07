@@ -94,13 +94,23 @@ GENERATED_RE = re.compile(
 )
 
 STICKER = (
-    '<a href="https://nekoweb.org/">'
+    '<a href="https://nekoweb.org/" title="Nekoweb Host Website">'
     '<img src="https://nekoweb.org/assets/buttons/button1.gif" '
     'width="88" height="31" alt="Nekoweb">'
     "</a>"
 )
 LINKEDIN_URL = "https://www.linkedin.com/in/michael-knapman/"
 LINKEDIN_IMG = "assets/linkedin.webp"
+LINKEDIN_TITLE = "Michael's Linkedin"
+# Absolute URLs on purpose: visitors copy this snippet onto their own
+# sites, so it must work offsite as well as here.
+MYBUTTON = (
+    '<a href="https://michael.nekoweb.org/" '
+    'title="Feel free to put my button on your website!">'
+    '<img src="https://michael.nekoweb.org/assets/button_mimitchi.webp" '
+    'width="88" height="31" alt="Michael Knapman">'
+    "</a>"
+)
 COPYRIGHT = "Copyright © 2026 Michael Knapman. All Rights Reserved."
 
 # Compact music player shown at the top of the sidebar. It uses the browser's
@@ -526,7 +536,7 @@ def build_sidebar(sitemap, current_rel):
     nav_lines = render_nav(sitemap.root, cur_dir, current_rel)
     nav = "\n".join(nav_lines)
     linkedin = (
-        f'<a href="{LINKEDIN_URL}">'
+        f'<a href="{LINKEDIN_URL}" title="{LINKEDIN_TITLE}">'
         f'<img src="{rel_href(cur_dir, LINKEDIN_IMG)}" '
         f'width="64" height="54" alt="LinkedIn">'
         "</a>"
@@ -543,6 +553,7 @@ def build_sidebar(sitemap, current_rel):
         f"    <div class=\"sidebar-foot\">\n"
         f"        {STICKER}\n"
         f"        {linkedin}\n"
+        f"        {MYBUTTON}\n"
         f"        <p>{escape_html(COPYRIGHT)}</p>\n"
         f"    </div>\n"
         f"</aside>\n"
