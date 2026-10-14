@@ -30,6 +30,19 @@ ETFs solve both of these problems.
 ETFs such as VGSH and XSB.TO invests money in bonds. Bonds are re-sellable term-deposits, and their value can go up or down over time depending if mortgage rates go down or up. VGSH and XSB.TO pay out their interest monthly instead of yearly like a term deposit.  
 VGSH and XSB.TO always pay out fair interest rate of their holdings, with no need to hunt for promotional rates. You can also sell the ETFs at any time, with only small gains or losses, compared to a term deposit which you can never sell.
 
+# ETFs to replace directly purchased real estate
+
+Individual houses, condos, and plots of land are difficult to manage, and expose you to the catastrophic risks of a specific neighbourhood, eg sinkholes.  
+What if you wanted to outsource the work, and spread out your eggs into many baskets?  
+ETFs solve both of these problems.  
+ETFs such as REET or VRE.TO invest in multiple Real Estate Investment Trusts (REITs). REITs are landlord corporations that manage properties, collect rent, and pay out the rent to shareholders.  
+The sole remaining advantage of directly purchasing real estate is that it allows for mortgage loans which are extremely special. Mortgage loans combine:  
+5x leverage, where you can purchase a 500k condo with 100k cash plus a 400k loan,  
+Non-callable loan structure, where the lender cannot suddenly ask for instant repayment,  
+Extremely long amortization periods of 25 years, versus personal loans which are usually 1-5 years,  
+Variable/adjustable rate mortages have competitive borrowing costs of overnight rate + 2.5%,  
+In the united states you have the option of having a 25 year fixed rate mortgage for a competitive price.
+
 # ETFs to replace gold bars in your safe
 
 Holding gold coins and silver bars in your safe at home is not that safe, as the safe may get stolen or swept away during a flood, causing high insurance costs of 1% per year. Additionally, each transaction has large fees, as gold dealers will never give you the full fair value for your gold when you sell it. Debit card fees will apply too. In total, a set of purchase-then-sale transactions have a fee of around 10%, with an insurance fee of 1% per year.  
