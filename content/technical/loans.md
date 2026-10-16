@@ -8,25 +8,42 @@ Without home loans and car loans, many would be forced to rent and walk against 
 This article will highlight some of the cheapest and most useful loans for people to consider.
 
 Definitions that will help distinguish the different types of loans:  
-Callable loan: The lender can at any time demand instant repayment of the full loan amonunt. This is risky.
-Non callable loan: The lender cannot ever demand instant repayment of the loan amount. This is safe.
 
-WIP
+Installment loan vs revolving credit. Does the loan start large and get smaller over time, or does it change flexibly as you borrow or pay off more?
+Amoritzation period. How long until the entire loan is paid back?  
+Variable rate loan vs fixed rate loan. Does the interest rate change day by day, or does it remain fixed for months and years?
+Loan Term. How long the interest rate remains fixed.  
+Interest rate index. Where does the lender derive its benchmark interest rate from, the overnight lending rate or prime rate or some proprietary index?
+Interest rate premium. An extra few percents on top of the interest rate index, due to the need for profit, and compensation for the risk of borrower default.  
+Unsecured loan vs secured loan. Does the lender just trust the borrower to pay back the loan, or does the lender force the borrower to put up valuable goods as collateral?
+Callable vs noncallable loan. Is the lender able to arbitrarily demand instant repayment of the full loan amount, or not?
 
-# Margin
+Below is a tier list of the best loans, going from amazing to just good.  
+Note that Canada's overnight rate is 2.25% and its Prime rate is 4.45%.
 
-# Mortgage
+| Name | Installment/Revolving | Amortization | Variable/Fixed | Term | Interest Rate Formula | Interest Rate 2026 Oct Canada | Secured? | Callable? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| OSAP Loan | Installment | 10-15 year | Variable | N/A | 0% or Prime + 1% | 0% or 5.45% | Unsecured | Noncallable |
+| Professional Student Line of Credit | Revolving | N/A | Variable | N/A | Prime - 0.25% | 4.2% | Unsecured | Callable |
+| Mortgage (Fixed) | Installment | 25 year | Fixed | 5 year | 5 Year Bond Yield + 1% | 4.6% | Secured | Noncallable |
+| Mortgage (Variable) | Installment | 25 year | Variable | N/A | Prime - 0.5% | 3.95% | Secured | Noncallable | 
+| Margin (IBKR) | Revolving | N/A | Variable | N/A | Overnight + 1.5% | 3.6% | Secured | Callable |
 
-# Personal Loan
+WIP to add later 
 
-# Home Equity Line of Credit
+Personal Loan
 
-# Line of Credit 
+Home Equity Line of Credit
 
-# Student Loan 
+Line of Credit 
 
-# Professional Student Line of Credit
+Car Loan
 
-# Car Loan
 
 # Loans to avoid
+
+Credit card
+
+Buy now pay later
+
+Payday loans

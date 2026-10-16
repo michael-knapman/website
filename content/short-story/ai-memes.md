@@ -18,12 +18,12 @@ Photorealistic video-audio synchronized together results in the first zero-effor
 Social media content can now be fully automatically generated.  
 Old people in public are often seen scrolling through funny content that they don't know is AI generated.
 
+2010-rust-rewrite-mashup, released in September 2026.  
+https://github.com/chasmlol/2010-rust-rewrite-mashup  
+Used AI to splice together Modern Warfare 2, Skate 3, and Minecraft. Totally playable.  
+AI is getting closer to being able to generate interactive experiences. "If you can imagine it, you can play it" might be a reality soon.
 
-WIP BELOW
-
-Modern warfare 2, skate 3, minecraft, released September 2026 2010-rust-rewrite-mashup
-https://github.com/chasmlol/2010-rust-rewrite-mashup
-
-reverse engineer anything
-spiked in popularity in October 2026
-https://github.com/morluto/rea
+REA Reverse Engineer Anything, spiked in popularity in October 2026.  
+https://github.com/morluto/rea  
+Can do a medium-quality and medium-performance reproduction of any software UI and functionality.  
+This might reduce the value of paid software. It will help decompile video games.
