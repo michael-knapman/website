@@ -28,8 +28,7 @@ AAC audio codec for the audio stream.
 APTX or AAC bluetooth codec.
 
 What I am using right now for this website:  
-MP3 for the audio. I do not have the original FLAC, and converting lossy to lossy  
-is bad, so I will not be switching from MP3 to OPUS.  
+MP3 for the audio. I do not have the original FLAC, and converting lossy to lossy is bad, so I will not be switching from MP3 to OPUS.  
 WEBP due to good size compression, even from lossy-to-lossy.  
 PNG for cursor files which are mandated to be PNG.
 

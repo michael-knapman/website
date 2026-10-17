@@ -25,25 +25,19 @@ Note that Canada's overnight rate is 2.25% and its Prime rate is 4.45%.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | OSAP Loan | Installment | 10-15 year | Variable | N/A | 0% or Prime + 1% | 0% or 5.45% | Unsecured | Noncallable |
 | Professional Student Line of Credit | Revolving | N/A | Variable | N/A | Prime - 0.25% | 4.2% | Unsecured | Callable |
-| Mortgage (Fixed) | Installment | 25 year | Fixed | 5 year | 5 Year Bond Yield + 1% | 4.6% | Secured | Noncallable |
 | Mortgage (Variable) | Installment | 25 year | Variable | N/A | Prime - 0.5% | 3.95% | Secured | Noncallable | 
+| Mortgage (Fixed) | Installment | 25 year | Fixed | 5 year | 5 Year Bond Yield + 1% | 4.6% | Secured | Noncallable |
 | Margin (IBKR) | Revolving | N/A | Variable | N/A | Overnight + 1.5% | 3.6% | Secured | Callable |
-
-WIP to add later 
-
-Personal Loan
-
-Home Equity Line of Credit
-
-Line of Credit 
-
-Car Loan
+| Home Equity Line of Credit | Revolving | N/A | Variable | N/A | Prime + 0% | 4.45% | Secured | Callable | 
+| Car Loan | Installment | 1-8 year | Fixed | 1-8 year | Prime + 3% | Secured | Noncallable | 
+| Line of Credit | Revolving | N/A | Variable | N/A | Prime + 4% | 8.45% | Unsecured | Callable | 
+| Personal Loan | Installment | 1-5 year | Fixed | 1-5 year | 5 year Bond Yield + 2% to 10% | 10% | Unsecured | Noncallable |
 
 
 # Loans to avoid
 
-Credit card
+Credit card. Like a line of credit but it has about a 25-30% interest rate.
 
-Buy now pay later
+Buy now pay later. Often used to enable compulsive buying or overspending.
 
-Payday loans
+Payday loans. Installment loan with a short amortization, but with a 400% interest rate.

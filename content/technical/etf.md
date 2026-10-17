@@ -43,6 +43,8 @@ Extremely long amortization periods of 25 years, versus personal loans which are
 Variable/adjustable rate mortages have competitive borrowing costs of overnight rate + 2.5%,  
 In the united states you have the option of having a 25 year fixed rate mortgage for a competitive price.
 
+PS. REITs are included in most stock ETFs, so a portfolio that contains 40k in stocks will contain about 1k in REITs and therefore real estate.
+
 # ETFs to replace gold bars in your safe
 
 Holding gold coins and silver bars in your safe at home is not that safe, as the safe may get stolen or swept away during a flood, causing high insurance costs of 1% per year. Additionally, each transaction has large fees, as gold dealers will never give you the full fair value for your gold when you sell it. Debit card fees will apply too. In total, a set of purchase-then-sale transactions have a fee of around 10%, with an insurance fee of 1% per year.  
