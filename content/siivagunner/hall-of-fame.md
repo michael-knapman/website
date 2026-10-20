@@ -323,7 +323,12 @@ My favourite Siivagunner songs in rough chronological order.
 * Mario take on me <https://www.youtube.com/watch?v=Mkeeqvv4w50>
 * No more nuzzles <https://www.youtube.com/watch?v=1MIJCZeRzVw>
 * Black knife DKC <https://www.youtube.com/watch?v=8ggBACNegA4>
-
+* Charlies inferno baldi https://www.youtube.com/watch?v=sXR3D4PndZU
+* Mr L Super Paper Mario Pokemon https://www.youtube.com/watch?v=yGJe8RxaNdw
+* Hardest maze bad apple https://www.youtube.com/watch?v=Pvu2QzfTvcA
+* Pink Ball Kirby https://www.youtube.com/watch?v=9olWGuXHzLU
+* Hal labs x hal labs https://www.youtube.com/watch?v=X1eMVdfvBdo
+* Experimental hip hop https://www.youtube.com/watch?v=LnOF4dquJ6w
 
 * VvvvvaVvvvvvr
 * Final Destination BEST <https://www.youtube.com/watch?v=LHwIPpixdNE>
