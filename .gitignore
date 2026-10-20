@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+# Generated build output; rebuilt from src/ and content/ by the build step.
+/public/

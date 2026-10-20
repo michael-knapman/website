@@ -13,41 +13,49 @@ to https://github.com/indiefellas/deploy2nekoweb
 Files not able to be pushed by deploy2nekoweb such as the custom cursor
 and linter are placed into the "hardcoded" folder.
 
-The "content" folder holds the digital garden as markdown; the build step turns
-each file into a webpage under public/.
-Most pages are just text, from the "content" folder.
-Some pages do not originate from the "content" folder, they are shrines or
-customized pages, and have their own style.css!
+There are three tracked source folders:
+
+- `content/` - the digital garden as markdown. Each file becomes a webpage.
+- `src/` - hand-written pages, images, stylesheets and other static files.
+- `hardcoded/` - local-only files that are not deployed.
+
+`public/` is generated output. It is gitignored and rebuilt from `src/` and
+`content/` on every build, so never edit it by hand. Most pages are just text
+from `content/`; shrines and customized pages live in `src/` and may have
+their own `style.css`.
 
 ## Build step
 
 The deploy workflow (`.github/workflows/deploy.yml`) runs `python3 static_site_generator.py`
-automatically on every push to `main`, then deploys `public/`. You do not need
-to build before `git push`; running it locally is only for previewing:
+on every push to `main`, then deploys `public/`. Locally:
+
     python3 static_site_generator.py
     python3 -m http.server 8000 --directory public
 
-Hand-crafted pages: pages you write directly in `public/` (like
-`credits.html`, or a pretty art shrine) get the sidebar and stylesheet but
-are never overwritten. Add `<!-- nocontentbox -->` anywhere.
+Hand-crafted pages: write them in `src/` (like `src/shrines.html`, or a pretty
+art shrine). The build copies them into `public/` and adds the sidebar and
+stylesheet, but never modifies the source. Add `<!-- nocontentbox -->`
+anywhere to opt out of the central text box.
 
 ## Test step
 
-Run the unit tests (standard library only, no dependencies):
+Build first, then run the unit tests (standard library only, no dependencies):
 
+    python3 static_site_generator.py
     python3 -m unittest discover -s tests -v
 
-Test the website in VScode terminal by running:
+Test the website in a terminal by running:
 
     python3 -m http.server 8000 --directory public
 
 ## Push step
 
-Simply git push, and the deploy.yml mirrors the code onto the website!
+Commit your changes to `content/`, `src/`, and the build scripts, then git
+push. The workflow builds the site and deploys the generated `public/` folder;
+there is no generated output to commit.
 
 ## TODO
 
-Add buttons in sidebar to link to github and linkedin.
 Add a guestbook.
 Include art assets from Tamagotchi Connection V3/4.5/5 and Tamagotchi corner shop 3, and concept art and promotional art.
 Make the website more easily accessable from nekoweb.org AKA make a nicer banner.

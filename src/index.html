@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael's Website</title>
+
+<link rel="preload" as="image" href="assets/TtownV4_50.webp"
+          imagesrcset="assets/TtownV4_50-640.webp 640w, assets/TtownV4_50-960.webp 960w, assets/TtownV4_50.webp 1237w"
+          imagesizes="(min-width: 1200px) calc(92vw - 356px), (min-width: 700px) 80vw, 88vw" fetchpriority="high">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+    <style>
+        /* ============================================================
+           Home page: TamaTown storybook map.
+           The centerpiece image is a hand-drawn town; each top-level
+           page gets a semi-transparent button sitting on one of the
+           buildings, Space Jam (1996) style.
+           Button positions are percentages of the image, so they stay
+           glued to their building at any screen size. To move a button,
+           just tweak its left/top values below or on the <a> element.
+           ============================================================ */
+        .ttown-hero {
+            text-align: center;
+            margin-bottom: 1.2em;
+        }
+        .ttown-map {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            line-height: 0;            /* no gap under the image */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+        }
+        .ttown-map img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .ttown-btn {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            padding: 0.35em 0.9em;
+            background: rgba(255, 247, 226, 0.55);
+            color: #3a3526;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            border-radius: 999px;
+            font-family: sans-serif;
+            font-size: clamp(11px, 1.5vw, 16px);
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+            text-decoration: none;
+            white-space: nowrap;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.15s ease, transform 0.15s ease,
+                        box-shadow 0.15s ease;
+            z-index: 2;
+        }
+        .ttown-btn:hover,
+        .ttown-btn:focus-visible {
+            background: rgba(255, 247, 226, 0.95);
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            outline: none;
+        }
+        .ttown-hint {
+            margin: 0.7em 0 0;
+            font-family: sans-serif;
+            font-size: 0.85em;
+            color: #6b6559;
+        }
+    </style></head>
+<body>
+    <div class="ttown-hero">
+        <div class="ttown-map" role="group" aria-label="Interactive map of TamaTown">
+            <img src="assets/TtownV4_50.webp"
+                 srcset="assets/TtownV4_50-640.webp 640w, assets/TtownV4_50-960.webp 960w, assets/TtownV4_50.webp 1237w"
+                 sizes="(min-width: 1200px) calc(92vw - 356px), (min-width: 700px) 80vw, 88vw"
+                 width="1237" height="824" fetchpriority="high"
+                 alt="A hand-drawn map of TamaTown. Each building is a link to a section of the site.">
+            <!--
+                Buttons sit on buildings in the image. Positions are % of the
+                image (left, top), so if a button misses its building just
+                nudge these two numbers until it sits where you want it.
+            -->
+            <a class="ttown-btn" style="left: 16%; top: 14%;" href="credits.html">Credits</a>
+            <a class="ttown-btn" style="left: 32%; top: 25%;" href="cool-websites.html">Cool stuff!</a>
+            <a class="ttown-btn" style="left: 20%; top: 46%;" href="housekeeping.html">Housekeeping</a>
+            <a class="ttown-btn" style="left: 77%; top: 22%;" href="siivagunner.html">Siivagunner</a>
+            <a class="ttown-btn" style="left: 72%; top: 48%;" href="selected-works.html">Selected Works</a>
+            <a class="ttown-btn" style="left: 45%; top: 57%;" href="short-story.html">Short Story</a>
+            <a class="ttown-btn" style="left: 19%; top: 90%;" href="technical.html">Technical</a>
+            <a class="ttown-btn" style="left: 59%; top: 82%;" href="shrines.html">Shrines</a>
+        </div>
+        <p class="ttown-hint">Click a building to explore that part of the site!</p>
+    </div>
+</body>
+</html>

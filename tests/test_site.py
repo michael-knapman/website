@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Tests for static_site_generator.py. Standard library only.
 
-Run from the repo root:
+Run the build first, then the tests from the repo root:
 
+    python3 static_site_generator.py
     python3 -m unittest discover -s tests -v
 """
 
@@ -140,6 +141,26 @@ class TestParagraph(unittest.TestCase):
         out = ssg.render_paragraph(["see <https://e.com> now"])
         self.assertIn('<a href="https://e.com">https://e.com</a>', out)
 
+    def test_bare_url_linked(self):
+        out = ssg.render_paragraph(["see https://e.com/path now"])
+        self.assertIn('<a href="https://e.com/path">https://e.com/path</a>',
+                      out)
+        self.assertNotIn("https://e.com/path now</a>", out)
+
+    def test_two_bare_urls_on_one_line(self):
+        out = ssg.render_paragraph(["https://a.com https://b.com"])
+        self.assertIn('href="https://a.com"', out)
+        self.assertIn('href="https://b.com"', out)
+
+    def test_trailing_punctuation_outside_link(self):
+        out = ssg.render_paragraph(["go to https://e.com/a."])
+        self.assertIn('<a href="https://e.com/a">https://e.com/a</a>.', out)
+
+    def test_bare_url_ampersand_not_double_escaped(self):
+        out = ssg.render_paragraph(["https://e.com/?a=1&b=2"])
+        self.assertIn('href="https://e.com/?a=1&amp;b=2"', out)
+        self.assertNotIn("&amp;amp;", out)
+
 
 class TestMarkdown(unittest.TestCase):
     def test_heading(self):
@@ -253,6 +274,11 @@ class TestIdempotency(unittest.TestCase):
 class TestRepo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        if not (PUBLIC / "index.html").exists():
+            raise RuntimeError(
+                "Build output is missing. Run "
+                "`python3 static_site_generator.py` before the tests."
+            )
         cls.pages = sorted(PUBLIC.rglob("*.html"))
 
     def test_no_escaped_br_leftover(self):
